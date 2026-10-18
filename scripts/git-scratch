@@ -1,5 +1,6 @@
 #!/bin/sh
-# Quelle/Konvention: github.com/comcy/kvasir (scripts/git-scratch, `kvasir scratch`); Änderungen dort synchron halten.
+# Maßgebliche Skriptquelle: diese Datei (comcy/dotfiles). Konventionsquelle: github.com/comcy/kvasir (`kvasir.scratch`);
+# Pfad-/Auflösungsregeln dort und hier identisch halten.
 # git-scratch: detached Scratch-Worktrees to look at a ref in isolation.
 # Same convention as `kvasir scratch`. Starts nothing but git.
 #   git-scratch add <ref>              print the path on stdout
