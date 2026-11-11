@@ -1,0 +1,43 @@
+;; Minimal-Konfiguration fuer einen Arbeits-Graph. Nicht gelistete Schluessel nimmt
+;; Logseq aus seinen Standardwerten. Ungetestet in einer echten Logseq-Installation.
+{:meta/version 1
+ :preferred-format :markdown
+ ;; TODO/DOING statt LATER/NOW
+ :preferred-workflow :todo
+ ;; ISO-Datum als Journal-Seitenname und Dateiname (journals/2026-11-11.md)
+ :journal/page-title-format "yyyy-MM-dd"
+ :journal/file-name-format "yyyy-MM-dd"
+ :feature/enable-journals? true
+ ;; Journal zeigt automatisch SCHEDULED/DEADLINE der naechsten N Tage (und Ueberfaelliges)
+ :scheduled/future-days 14
+ ;; Vorlage "Tagesplanung" (siehe pages/Vorlagen.md) fuer neue Tages-Journale
+ :default-templates {:journals "Tagesplanung"}
+ ;; Zusaetzliche Standard-Abfragen im Journal (angelehnt an Logseqs Standardkonfiguration)
+ :default-queries
+ {:journals
+  [{:title "Offen (letzte 14 Tage)"
+    :query [:find (pull ?h [*])
+            :in $ ?start ?today
+            :where
+            [?h :block/marker ?marker]
+            [(contains? #{"TODO" "DOING"} ?marker)]
+            [?h :block/page ?p]
+            [?p :block/journal? true]
+            [?p :block/journal-day ?d]
+            [(>= ?d ?start)]
+            [(<= ?d ?today)]]
+    :inputs [:14d :today]
+    :collapsed? false}
+   {:title "Anstehend (naechste 7 Tage)"
+    :query [:find (pull ?h [*])
+            :in $ ?start ?next
+            :where
+            [?h :block/marker ?marker]
+            [(contains? #{"TODO" "DOING"} ?marker)]
+            [?h :block/ref-pages ?p]
+            [?p :block/journal? true]
+            [?p :block/journal-day ?d]
+            [(> ?d ?start)]
+            [(< ?d ?next)]]
+    :inputs [:today :7d-after]
+    :collapsed? false}]}}
