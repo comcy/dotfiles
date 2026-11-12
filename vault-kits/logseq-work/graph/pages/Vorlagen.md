@@ -84,3 +84,19 @@
     -
   - ## Laufende Aufgaben
     - TODO 
+- Tageseintrag
+  template:: Tageseintrag
+  template-including-parent:: false
+  - Thema
+    status:: offen
+    notiz::
+    - TODO 
+- Monatsübersicht
+  template:: Monatsübersicht
+  template-including-parent:: false
+  - ## Übersicht JJJJ-MM
+    - {{query (and (property status) (between [[JJJJ-MM-01]] [[JJJJ-MM-31]]))}}
+      query-table:: true
+      query-properties:: [:block :page :notiz :status]
+      query-sort-by:: page
+      query-sort-desc:: false

@@ -67,6 +67,17 @@ const weekSections = weeks.map(ws => {
     `**Tage:** ${dayLinks}`,
   ].join("\n");
 }).join("\n\n---\n\n");
+
+const dow = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
+const dayRows = Array.from({length: cur.daysInMonth()}, (_, i) => {
+  const d = cur.clone().date(i + 1);
+  return `| ${dow[d.day()]} [[${d.format("YYYY-MM-DD")}]] |  |  |  |  |`;
+}).join("\n");
+const monthTable = [
+  "| Datum | Thema | Zusätzliche Notizen | Aufgaben | Status |",
+  "|---|---|---|---|---|",
+  dayRows,
+].join("\n");
 %>---
 title: <% tp.file.title %>
 created: <% tp.file.creation_date("YYYY-MM-DD") %>
@@ -97,10 +108,33 @@ WHERE !completed AND due AND due >= date(this.period_start) AND due <= date(this
 SORT due asc, priority asc
 ```
 
+## Monatsübersicht (Tabelle)
+<!-- Von Hand gepflegt, eine Zeile pro Tag. Mehrere Einträge am Tag: Zeile darunter einfügen
+     und die Datumszelle leer lassen. Zeilenumbruch in einer Zelle: <br>. Status z. B.
+     offen / erledigt / wartet. -->
+<% monthTable %>
+
 ## Termine
 -
 
 <% weekSections %>
+
+## Übersicht aus den Tagesnotizen (automatisch)
+<!-- Zeigt alle Einträge aus den Tagesnotizen dieses Monats, die mit [thema:: …] angelegt
+     wurden (Syntax siehe Tagesnotiz, Abschnitt "Journal"). Nur Ansicht: bearbeitet wird in der
+     Tagesnotiz. -->
+```dataview
+TABLE WITHOUT ID
+  file.link AS Datum,
+  item.thema AS Thema,
+  item.text AS "Zusätzliche Notizen",
+  map(filter(item.children, (c) => c.task AND !c.completed), (c) => c.text) AS Aufgaben,
+  item.status AS Status
+FROM "Journal" AND !"Journal/_templates"
+FLATTEN file.lists AS item
+WHERE type = "journal" AND item.thema AND file.day >= date(this.period_start) AND file.day <= date(this.period_end)
+SORT file.day ASC
+```
 
 ## Monatsrückblick
 <!-- Am Monatsende: Was wurde erreicht? Was nehme ich mit? -->

@@ -24,6 +24,7 @@ vault/
 | Journal mit Task-Tracking | `daily.md`: Tasks mit `[due:: …] [priority:: 1-3] [scope:: [[…]]]` |
 | Anstehende Termine + offene Todos im Journal | Tagesnotiz: „Termine", „Meetings heute", „Überfällig", „Heute fällig", „Diese Woche fällig", „Priorität 1" |
 | Seiten verlinken bei Meeting-Notizen | `meeting.md`: Projekt/Bereich/Teilnehmer als `[[Wikilinks]]`, Aufgaben mit `scope::` |
+| Kompakte Monatsübersicht (wie Confluence-Tabelle) | Monatsnotiz: „Monatsübersicht (Tabelle)" von Hand + „Übersicht aus den Tagesnotizen (automatisch)" |
 | Tägliche Morgenplanung | Tagesnotiz „Planung heute" (Top 3, Zeitblöcke) |
 | Wochen-/Monatsplanung | Monatsnotiz: je Woche „Planung (Montag)", „Fällig diese Woche", „Meetings dieser Woche", „Rückblick (Freitag)"; dazu „Monatsplanung" und „Monatsrückblick" |
 
@@ -56,6 +57,17 @@ vault/
 Neue Notiz im passenden Projekt-/Bereichsordner, Vorlage `meeting` einfügen. `date`
 im Frontmatter bestimmt, in welcher Tagesnotiz sie unter „Meetings heute" erscheint.
 Aufgaben im Abschnitt „Aufgaben" erscheinen automatisch in den Journal-Blöcken.
+
+## Monatsübersicht als Tabelle
+
+- **Von Hand:** Die Monatsnotiz enthält eine Tabelle `Datum | Thema | Zusätzliche Notizen |
+  Aufgaben | Status` mit einer Zeile je Tag. Weitere Einträge am selben Tag: Zeile darunter
+  einfügen, Datumszelle leer lassen; `<br>` für Zeilenumbrüche. Spaltennamen sind frei
+  änderbar.
+- **Automatisch:** Einträge in der Tagesnotiz als `- [thema:: Kundentermin] [status:: offen]
+  Notiz …` schreiben, offene Aufgaben eingerückt darunter (`  - [ ] …`). Die Dataview-Tabelle
+  der Monatsnotiz sammelt sie. Ungetestet: ob `item.text` die Inline-Felder im Notizen-Text
+  mit anzeigt, und ob die Aufgaben-Spalte wie gewünscht gefüllt wird.
 
 ## Grenzen
 

@@ -73,4 +73,6 @@ SORT due asc
 ```
 
 ## Journal
+<!-- Eintrag für die Monatsübersicht: "- [thema:: Thema] [status:: offen] Notizen". Aufgaben
+     dazu eingerückt darunter: "  - [ ] Text [due:: YYYY-MM-DD]". -->
 

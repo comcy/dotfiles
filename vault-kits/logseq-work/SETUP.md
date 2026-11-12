@@ -43,6 +43,18 @@ graph/
 | Wochenplanung | Seite `2026-W46` anlegen, Vorlage „Wochenplanung" einfügen |
 | Monatsplanung | Seite `2026-11` anlegen, Vorlage „Monatsplanung" einfügen |
 
+## Kompakte Monatsübersicht (statt Confluence-Tabelle)
+
+- **Eintragen:** im Tages-Journal die Vorlage „Tageseintrag" einfügen: ein Block mit dem Thema,
+  `status::` und `notiz::` als Eigenschaften, offene Aufgaben als `TODO`-Unterblöcke.
+- **Ansehen:** Seite `2026-11` anlegen, Vorlage „Monatsübersicht" einfügen und `JJJJ-MM`
+  durch Jahr und Monat ersetzen (Datumsgrenzen von Hand, Vorlagen sind statisch). Das
+  Ergebnis ist eine Tabelle mit den Spalten Thema (Block), Seite (= Tag), Notiz, Status.
+- **Grenzen:** Die Aufgaben-Spalte gibt es nicht, die `TODO`-Unterblöcke stehen in den Tages-
+  Journalen. Die Tabelle ist nur eine Ansicht; bearbeitet wird in den Blöcken, soweit ich
+  weiß nicht in der Tabelle selbst. `(property status)` ohne Wert, `query-table::` und
+  `query-properties::` sind nach der Dokumentation geschrieben und ungeprüft.
+
 ## Termine aus Outlook
 
 Wie beim Obsidian-Kit: abtippen oder M365 Copilot bitten („Liste meine heutigen Termine als

@@ -265,6 +265,16 @@ folder (OneDrive and `.git` do not mix well). `.gitignore` excludes `.trash/`,
 `workspace*.json` and `.DS_Store`. Commit and push manually at checkpoints; no agent
 should push automatically or on a schedule.
 
+## Monthly overview table
+
+The Monthly note has two table views of the month: **"Monatsübersicht (Tabelle)"** — a
+hand-maintained Markdown table, one row per day (Templater pre-fills date + weekday), columns
+Datum | Thema | Zusätzliche Notizen | Aufgaben | Status; extra rows for the same day leave the
+date cell empty — and **"Übersicht aus den Tagesnotizen (automatisch)"** — a Dataview table
+built from Journal list items written as `- [thema:: …] [status:: …] notes`, with open
+child tasks shown in the "Aufgaben" column. The automatic table is read-only; entries are
+edited in the Daily note.
+
 ## Meeting notes
 
 Created from `Journal/_templates/meeting.md` (Templater "Insert template" or a new note
