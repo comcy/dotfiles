@@ -1,0 +1,11 @@
+{
+  "baseUrl": "https://dev.azure.com/ORGANISATION",
+  "project": "PROJEKT",
+  "repositories": [],
+  "scope": "mine",
+  "namen": false,
+  "inProgressStates": ["Active", "In Progress", "Committed", "Doing"],
+  "doneStates": ["Closed", "Done", "Removed"],
+  "bugTypes": ["Bug"],
+  "areaPath": ""
+}

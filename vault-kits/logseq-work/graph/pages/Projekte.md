@@ -1,2 +1,0 @@
-- Alle Seiten mit `type:: project`
-- {{query (page-property type project)}}
