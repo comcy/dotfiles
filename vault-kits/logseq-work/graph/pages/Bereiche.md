@@ -1,0 +1,2 @@
+- Alle Seiten mit `type:: area`
+- {{query (page-property type area)}}

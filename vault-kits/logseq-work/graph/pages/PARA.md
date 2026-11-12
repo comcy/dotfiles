@@ -1,0 +1,2 @@
+- PARA-Übersicht: [[Projekte]] · [[Bereiche]] · [[Ressourcen]] · [[Archiv]]
+- Jede Seite bekommt eine Eigenschaft `type::` (project, area, resource, archive, meeting). Die Übersichtsseiten listen sie per Abfrage. Neue Projekt-/Bereichsseiten aus den Vorlagen "Projekt" und "Bereich" anlegen.

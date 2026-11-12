@@ -1,0 +1,2 @@
+- Alle Seiten mit `type:: resource`
+- {{query (page-property type resource)}}
