@@ -55,6 +55,25 @@ graph/
   weiß nicht in der Tabelle selbst. `(property status)` ohne Wert, `query-table::` und
   `query-properties::` sind nach der Dokumentation geschrieben und ungeprüft.
 
+## Aggregation: Übersichten aus Journal-Daten (Scope, Tag, Eigenschaften)
+
+Logseq sammelt Journal-Inhalte über **Verweise und Eigenschaften**, nicht über Ordner:
+
+- **Scope = Seitenverweis.** Wer in einem Journal-Block `[[Projekt X]]` oder `#projekt-x`
+  schreibt, taucht auf der Seite „Projekt X" automatisch unter „Linked References" auf, ohne
+  Abfrage. Die Vorlagen „Projekt" und „Bereich" haben zusätzlich Abfragen für offene Aufgaben,
+  Einträge mit `status::` und Erledigtes, jeweils für die aktuelle Seite
+  (`<% current page %>` wird beim Einfügen ersetzt).
+- **Seiten-Eigenschaften** (`type::`, `status::`, `due::`) stehen im ersten Block der Seite
+  (oder als YAML-Frontmatter; soweit ich weiß liest Logseq beides). Die Seiten
+  `Projekte`/`Bereiche`/`Ressourcen`/`Archiv` listen sie per `(page-property type …)`.
+- **Zeitraum-Übersicht:** die Vorlage „Monatsübersicht" zeigt alle Einträge mit `status::` und
+  alle offenen Aufgaben des Monats als Tabellen (Datumsgrenzen von Hand einsetzen).
+- Eigene Übersichten: in einen Block `{{query (and [[Scope]] (between [[JJJJ-MM-01]] [[JJJJ-MM-31]]))}}`.
+  Die Ergebnisse lassen sich als Tabelle anzeigen.
+- Nicht geprüft: `<% current page %>` innerhalb einer Abfrage, YAML-Frontmatter-Verhalten und
+  die Abfragen selbst (nach Doku geschrieben).
+
 ## Termine aus Outlook
 
 Wie beim Obsidian-Kit: abtippen oder M365 Copilot bitten („Liste meine heutigen Termine als

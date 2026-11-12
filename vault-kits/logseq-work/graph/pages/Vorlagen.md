@@ -71,10 +71,12 @@
     due::
   - ## Ziel und Ergebnis
     -
-  - ## Aufgaben
-    - TODO 
-  - ## Meetings und Notizen
-    -
+  - ## Offene Aufgaben (aus allen Journalen und Seiten, die diese Seite verlinken)
+    - {{query (and [[<% current page %>]] (task TODO DOING))}}
+  - ## Einträge und Status
+    - {{query (and [[<% current page %>]] (property status))}}
+  - ## Erledigt
+    - {{query (and [[<% current page %>]] (task DONE))}}
 - Bereich
   template:: Bereich
   template-including-parent:: false
@@ -82,8 +84,10 @@
     verantwortung::
   - ## Standard und Zuständigkeit
     -
-  - ## Laufende Aufgaben
-    - TODO 
+  - ## Offene Aufgaben (aus allen Journalen und Seiten, die diese Seite verlinken)
+    - {{query (and [[<% current page %>]] (task TODO DOING))}}
+  - ## Einträge und Status
+    - {{query (and [[<% current page %>]] (property status))}}
 - Tageseintrag
   template:: Tageseintrag
   template-including-parent:: false
@@ -98,5 +102,11 @@
     - {{query (and (property status) (between [[JJJJ-MM-01]] [[JJJJ-MM-31]]))}}
       query-table:: true
       query-properties:: [:block :page :notiz :status]
+      query-sort-by:: page
+      query-sort-desc:: false
+  - ## Offene Aufgaben im Monat
+    - {{query (and (task TODO DOING) (between [[JJJJ-MM-01]] [[JJJJ-MM-31]]))}}
+      query-table:: true
+      query-properties:: [:block :page]
       query-sort-by:: page
       query-sort-desc:: false
