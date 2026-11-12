@@ -1,0 +1,28 @@
+filters:
+  and:
+    - type == "termin"
+formulas:
+  tage_bis: (date(date) - today()).days
+properties:
+  formula.tage_bis:
+    displayName: Tage bis
+views:
+  - type: table
+    name: Kommend
+    filters:
+      and:
+        - erledigt != true
+        - date >= today()
+    order:
+      - file.name
+      - date
+      - formula.tage_bis
+    sort:
+      - property: formula.tage_bis
+        direction: ASC
+  - type: table
+    name: Alle
+    order:
+      - file.name
+      - date
+      - erledigt

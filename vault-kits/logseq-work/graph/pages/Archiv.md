@@ -1,2 +1,0 @@
-- Alle Seiten mit `type:: archive`
-- {{query (page-property type archive)}}

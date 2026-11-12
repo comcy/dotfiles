@@ -1,0 +1,25 @@
+filters:
+  and:
+    - 'type == "projekt"'
+views:
+  - type: table
+    name: Aktiv
+    filters:
+      and:
+        - file.inFolder("1-projekte")
+        - 'status != "abgeschlossen"'
+    order:
+      - file.name
+      - status
+      - bereich
+      - ziel
+      - zieldatum
+  - type: table
+    name: Archiv
+    filters:
+      and:
+        - file.inFolder("4-archiv")
+    order:
+      - file.name
+      - bereich
+      - zieldatum

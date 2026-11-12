@@ -1,0 +1,14 @@
+filters:
+  and:
+    - 'type == "meeting"'
+views:
+  - type: table
+    name: Alle Meetings
+    order:
+      - file.name
+      - date
+      - thema
+      - teilnehmer
+    groupBy:
+      property: monat
+      direction: DESC

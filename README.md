@@ -15,9 +15,9 @@ git clone https://github.com/comcy/dotfiles ~/dotfiles
 | `git-scratch` | Branch/Ref isoliert ansehen: detached Scratch-Worktree anlegen (`add <ref>`, Pfad auf stdout), `list`, `clean [<ref>] [--force]`. Startet nur `git`, keine Tests oder Installationen. Gleiche Konvention wie `kvasir scratch` (Konventionsquelle: kvasir); das Skript wird hier gepflegt. |
 | `git-scratch.ps1` | Native PowerShell-Variante (5.1 und 7+, keine Module) von `git-scratch`: `add <ref>`, `list`, `clean [<ref>] [-Force]`, gleiche Konvention und Pfade wie `kvasir scratch`. Aufruf z. B. `powershell -ExecutionPolicy Bypass -File scripts\git-scratch.ps1 add feat/foo`; alternativ einmal `Unblock-File scripts\git-scratch.ps1` (nach Download/Klon als Zip) und `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`. |
 
-## vault-kits/
+## arbeits-vault/
 
-Neutrale Starter-Vorlagen für einen Arbeits-Wissensspeicher (PARA, Journal, Tasks, Meeting-Notizen) in zwei Varianten, `obsidian-work/` und `logseq-work/`. Vergleich und Einrichtung: [`vault-kits/README.md`](vault-kits/README.md).
+Obsidian-Vault-Blueprint für die Arbeit (PARA, Journal, Meeting-Notizen, Termine, Todos). Nur Core-Plugins, reine Markdown-Dateien, optionale Node-Skripte (Todo-Sammlung, Azure-DevOps-Metriken). Einrichtung: [`arbeits-vault/README.md`](arbeits-vault/README.md). Die früheren `vault-kits/` (Obsidian/Logseq mit Community-Plugins) sind entfernt und in der Git-Historie (PR #4) abrufbar.
 
 ## .zshrc
 
