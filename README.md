@@ -18,3 +18,17 @@ git clone https://github.com/comcy/dotfiles ~/dotfiles
 ## vault-kits/
 
 Neutrale Starter-Vorlagen für einen Arbeits-Wissensspeicher (PARA, Journal, Tasks, Meeting-Notizen) in zwei Varianten, `obsidian-work/` und `logseq-work/`. Vergleich und Einrichtung: [`vault-kits/README.md`](vault-kits/README.md).
+
+## .zshrc
+
+zsh-Konfiguration mit oh-my-zsh (Theme `agnoster`, Plugins `git`, `aliases`, `npm`, `zsh-autosuggestions`, `zsh-syntax-highlighting`, `zsh-interactive-cd`), Sprache `de_DE.UTF-8` und PATH-Ergänzungen. Keine Zugangsdaten, keine festen Home-Pfade (`$HOME` statt Benutzername). Als Referenz gedacht: Teile entnehmen oder die Datei nach `~/.zshrc` kopieren.
+
+```sh
+# 1. oh-my-zsh installieren (siehe https://ohmyz.sh), danach die beiden Custom-Plugins:
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+# 2. Konfiguration übernehmen (bestehende ~/.zshrc vorher sichern)
+cp .zshrc ~/.zshrc
+```
+
+Hinweise: `agnoster` braucht eine Powerline-fähige Schrift; die `de_DE`-Locale muss installiert sein; `LC_ALL` zu setzen überschreibt alle anderen `LC_*`-Variablen.
