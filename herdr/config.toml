@@ -1,0 +1,30 @@
+onboarding = false
+
+[ui.toast]
+delivery = "system"
+
+[ui]
+status_indicators = "symbols"
+
+[theme]
+name = "solarized"
+auto_switch = false
+
+# Plugin actions (plugins: https://github.com/comcy/herdr-plugins, not yet pushed)
+[[keys.command]]
+key = "prefix+l"
+type = "plugin_action"
+command = "hp.claude-layout.apply"
+description = "claude layout"
+
+[[keys.command]]
+key = "prefix+a"
+type = "plugin_action"
+command = "hp.gh-watch.runs"
+description = "gh runs"
+
+[[keys.command]]
+key = "prefix+p"
+type = "plugin_action"
+command = "hp.gh-watch.prs"
+description = "gh prs"

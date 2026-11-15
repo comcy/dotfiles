@@ -32,3 +32,7 @@ cp .zshrc ~/.zshrc
 ```
 
 Hinweise: `agnoster` braucht eine Powerline-fähige Schrift; die `de_DE`-Locale muss installiert sein; `LC_ALL` zu setzen überschreibt alle anderen `LC_*`-Variablen.
+
+## herdr/
+
+[Herdr](https://herdr.dev)-Konfiguration (Theme, Keybindings für Plugin-Aktionen) plus `setup.sh`: verlinkt `config.toml` nach `~/.config/herdr/` und linkt die Plugins aus einem lokalen `herdr-plugins`-Clone. Danach `herdr server reload-config`.
