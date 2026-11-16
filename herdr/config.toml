@@ -28,3 +28,15 @@ key = "prefix+p"
 type = "plugin_action"
 command = "hp.gh-watch.prs"
 description = "gh prs"
+
+[[keys.command]]
+key = "prefix+z"
+type = "plugin_action"
+command = "hp.ado-watch.runs"
+description = "ado pipelines"
+
+[[keys.command]]
+key = "prefix+x"
+type = "plugin_action"
+command = "hp.ado-watch.prs"
+description = "ado prs"
