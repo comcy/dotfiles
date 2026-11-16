@@ -35,4 +35,4 @@ Hinweise: `agnoster` braucht eine Powerline-fähige Schrift; die `de_DE`-Locale 
 
 ## herdr/
 
-[Herdr](https://herdr.dev)-Konfiguration (Theme, Keybindings für Plugin-Aktionen) plus `setup.sh`: verlinkt `config.toml` nach `~/.config/herdr/` und linkt die Plugins aus einem lokalen `herdr-plugins`-Clone. Danach `herdr server reload-config`.
+[Herdr](https://herdr.dev)-Konfiguration (Theme, Keybindings für Plugin-Aktionen) plus `setup.sh`: verlinkt `config.toml` nach `~/.config/herdr/` und linkt die Plugins aus einem lokalen Clone von [`comcy/herdr-plugins`](https://github.com/comcy/herdr-plugins). Danach `herdr server reload-config`.

@@ -10,7 +10,7 @@ status_indicators = "symbols"
 name = "solarized"
 auto_switch = false
 
-# Plugin actions (plugins: https://github.com/comcy/herdr-plugins, not yet pushed)
+# Plugin actions (plugins: https://github.com/comcy/herdr-plugins)
 [[keys.command]]
 key = "prefix+l"
 type = "plugin_action"
