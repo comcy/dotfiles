@@ -32,3 +32,7 @@ cp .zshrc ~/.zshrc
 ```
 
 Hinweise: `agnoster` braucht eine Powerline-fähige Schrift; die `de_DE`-Locale muss installiert sein; `LC_ALL` zu setzen überschreibt alle anderen `LC_*`-Variablen.
+
+## herdr/
+
+[Herdr](https://herdr.dev)-Konfiguration (Theme, Keybindings für Plugin-Aktionen) plus `setup.sh`: verlinkt `config.toml` nach `~/.config/herdr/` und linkt die Plugins aus einem lokalen Clone von [`comcy/herdr-plugins`](https://github.com/comcy/herdr-plugins). Danach `herdr server reload-config`. Für die native **herdr-app**: `herdr/app/keys.json` (Keybindings, u. a. `ctrl-shift-g` → gh-watch) wird nach `~/.config/herdr-app/` kopiert (Backup `.bak`), Mods + Layout `main-code` kommen aus [`herdr-plugins/herdr-app`](https://github.com/comcy/herdr-plugins/tree/main/herdr-app) (`install.sh`). Danach `herdr-app do layout.switch --name main-code`.
