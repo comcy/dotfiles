@@ -4,6 +4,7 @@
 set -eu
 here=$(cd "$(dirname "$0")" && pwd)
 plugins=${1:-$HOME/Workspace/herdr-plugins}
+[ -d "$plugins" ] || git clone https://github.com/comcy/herdr-plugins "$plugins"
 mkdir -p "$HOME/.config/herdr"
 ln -sfn "$here/config.toml" "$HOME/.config/herdr/config.toml"
 for p in claude-layout gh-watch ado-watch; do herdr plugin link "$plugins/$p" >/dev/null; done
